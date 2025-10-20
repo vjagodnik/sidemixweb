@@ -10,4 +10,4 @@ Here you can find information about our aims, results, and publications.
 
 ---
 
-[Home](/sidemix/) | [About](/sidemix/about.html) | [Aims](/sidemix/aims.html) | [Contact](/sidemix/contact.html)
+[Home](/sidemix/) | [About](/sidemix/about.md) | [Aims](/sidemix/aims.md) | [Contact](/sidemix/contact.md)
