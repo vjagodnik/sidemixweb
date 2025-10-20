@@ -10,4 +10,8 @@ Here you can find information about our aims, results, and publications.
 
 ---
 
-[Home](/sidemix/) | [About](/sidemix/about.md) | [Aims](/sidemix/aims.md) | [Contact](/sidemix/contact.md)
+[Home]({{ site.baseurl }}/) |
+[About]({{ site.baseurl }}/about.md) |
+[Aims]({{ site.baseurl }}/aims.md) |
+[Contact]({{ site.baseurl }}/contact.md)
+
