@@ -2,7 +2,7 @@
 title: "About"
 ---
 
-[Home](/sidemix/) | [About](about.md) | [Aims](/sidemix/aims.md) | [Contact](/sidemix/contact.md)
+[Home](/sidemix/) | [About](/sidemix/about.md) | [Aims](/sidemix/aims.md) | [Contact](/sidemix/contact.md)
 
 # About the Project
 
