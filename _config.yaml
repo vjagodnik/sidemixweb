@@ -1,3 +1,6 @@
 title: "SIDEMIX Project"
 description: "Stiffness Degradation and Micromechanical Behaviour of Sand–Fine Mixtures Under Cyclic Loading"
 theme: jekyll-theme-cayman
+
+url: "https://vjagodnik.github.io"
+baseurl: "/sidemix"
