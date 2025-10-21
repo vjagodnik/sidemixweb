@@ -4,15 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SIDEMIX — About</title>
+<style>
+  body{font-family:system-ui,Arial;margin:0;background:#f4f6f8;color:#222}
+  header{background:#515354;color:#fff;padding:1rem 2rem}
+  nav a{color:#fff;margin-right:1rem;text-decoration:none;font-weight:600}
+  main{max-width:900px;margin:2rem auto;padding:1.25rem;background:#fff;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  footer{text-align:center;padding:1rem;color:#666;font-size:.9rem}
+  .logo{height:40px;vertical-align:middle;margin-right:.6rem}
+</style>
 </head>
 <body>
-  <header style="background:#0b5fa5;color:#fff;padding:1rem 2rem">
-    <a href="index.html" style="color:#fff;text-decoration:none;font-weight:600">← Home</a>
+  <header>
+    <img src="assets/images/logo.png" alt="SIDEMIX" class="logo" onerror="this.style.display='none'">
+    <span style="font-size:1.2rem">SIDEMIX Project</span>
+    <nav style="float:right">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="aims.html">Aims</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="clear:both"></div>
   </header>
-  <main style="max-width:900px;margin:2rem auto;padding:1.25rem;background:#fff;border-radius:8px">
-    <h1>About SIDEMIX</h1>
-    <p>Project description …</p>
+
+  <main>
+    <h1>About the SIDEMIX Project</h1>
+    <p>The <strong>SIDEMIX</strong> project aims to improve the understanding of soil stiffness degradation under cyclic loading, focusing on the influence of particle morphology (shape, size, and roughness) and the proportion of fine-grained fractions in sand mixtures.</p>
+
+    <p>The project combines <strong>experimental</strong> methods—such as triaxial tests, torsional shear, and SEM analysis—with <strong>numerical simulations</strong> based on the Discrete Element Method (DEM) to study micromechanical soil behavior.</p>
+
+    <p>Expected outcomes include improved models for predicting soil response under dynamic loads and the development of more reliable tools for geotechnical design.</p>
   </main>
-  <footer style="text-align:center;color:#666;padding:1rem">© 2025</footer>
+
+  <footer>© 2025 Vedran Jagodnik — SIDEMIX</footer>
 </body>
 </html>
