@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIDEMIX — News</title>
+
+<style>
+
+/* ---------- Light + Dark Theme Variables ---------- */
+:root {
+  --bg: #f4f6f8;
+  --text: #222;
+  --card-bg: #fff;
+  --header-bg: #515354;
+  --footer-text: #666;
+}
+[data-theme="dark"] {
+  --bg: #1d1f21;
+  --text: #ddd;
+  --card-bg: #2a2d2f;
+  --header-bg: #333;
+  --footer-text: #aaa;
+}
+
+/* ---------- Global Styles ---------- */
+body{
+  font-family:system-ui,Arial;margin:0;
+  background:var(--bg);color:var(--text);
+  display:flex;flex-direction:column;min-height:100vh;
+}
+header{
+  background:var(--header-bg);color:#fff;
+  padding:1rem 2rem;position:relative;
+}
+nav a{color:#fff;margin-right:1rem;text-decoration:none;font-weight:600}
+footer{text-align:center;padding:1rem;color:var(--footer-text);font-size:.9rem;margin-top:auto}
+.logo{height:40px;vertical-align:middle;margin-right:.6rem}
+
+/* ---------- Dark Mode Toggle ---------- */
+.toggle {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:1.4rem;
+}
+
+/* Layout */
+.container { display:flex; max-width:1100px; margin:2rem auto; gap:2rem; }
+main{
+  flex:3;background:var(--card-bg);
+  padding:1.5rem;border-radius:8px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+aside{
+  flex:1;background:var(--card-bg);
+  padding:1rem;border-radius:8px;height:fit-content;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* News cards */
+.post{display:flex;gap:1rem;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid #ddd}
+.thumb{width:140px;height:90px;object-fit:cover;border-radius:6px;cursor:pointer}
+.date{color:#777;font-size:0.9rem;margin-bottom:0.2rem}
+.title{font-size:1.2rem;font-weight:600;margin-bottom:0.3rem}
+.category{
+  display:inline-block;padding:0.2rem 0.5rem;
+  font-size:0.75rem;border-radius:4px;margin-bottom:0.4rem;
+}
+.cat-event{background:#005bbb;color:white}
+.cat-publication{background:#008f39;color:white}
+.cat-update{background:#d97706;color:white}
+
+/* Sidebar styling */
+.sidebar-heading{font-weight:bold;margin-bottom:0.5rem}
+.category-list a{display:block;margin-bottom:0.3rem;color:var(--text);text-decoration:none}
+.category-list a:hover{text-decoration:underline}
+
+/* ---------- Modal Gallery ---------- */
+.modal {
+  display:none;
+  position:fixed;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.85);
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.modal img {
+  max-width:90%;
+  max-height:80%;
+  border-radius:8px;
+}
+.modal .nav-btn {
+  position:absolute;
+  top:50%;
+  font-size:2rem;
+  color:white;
+  cursor:pointer;
+  user-select:none;
+}
+#prev { left:20px; }
+#next { right:20px; }
+#close { position:absolute; top:20px; right:20px; font-size:2rem; cursor:pointer; }
+
+/* Footer toggle button */
+.toggle-footer {
+  margin-top:0.5rem;
+  cursor:pointer;
+  font-size:1.4rem;
+  user-select:none;
+}
+
+footer {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+</style>
+</head>
+
+<body>
+
+  <header>
+    <img src="assets/images/logo.png" alt="SIDEMIX" class="logo" onerror="this.style.display='none'">
+    <span style="font-size:1.2rem">SIDEMIX Project</span>
+
+
+
+
+    <nav style="float:right">
+      <a href="index.html">Home</a>
+      <a href="news.html">News</a>
+      <a href="about.html">About</a>
+      <a href="aims.html">Aims</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div style="clear:both"></div>
+  </header>
+
+  <div class="container">
+
+    <!-- MAIN -->
+    <main>
+      <h1>Project News</h1>
+
+      <!-- POST 1 -->
+      <div class="post">
+        <img src="assets/news/post1/kickoff.png" class="thumb" onclick="openGallery('post1', 0)">
+        <div>
+          <div class="category cat-event">Event</div>
+          <div class="date">2025-02-18</div>
+          <div class="title">SIDEMIX Kick-off Meeting</div>
+          <p>The official project kick-off meeting took place at the Faculty of Civil Engineering with research team participation.</p>
+        </div>
+      </div>
+
+      <!-- YOUR COMMENTED POSTS STAY UNCHANGED -->
+      <!--
+      <div class="post"> … </div>
+      -->
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="sidebar-heading">Categories</div>
+              <div class="category-list">
+              <a href="#events">✦ Events</a>
+              <a href="#publications">⧉ Publications</a>
+              <a href="#updates">↻ Updates</a>
+              </div>
+
+    </aside>
+
+  </div>
+
+  <!-- MODAL GALLERY -->
+  <div class="modal" id="modal">
+    <span id="close" onclick="closeGallery()">✖</span>
+    <span id="prev" class="nav-btn" onclick="prevImg()">❮</span>
+    <img id="modalImg" src="">
+    <span id="next" class="nav-btn" onclick="nextImg()">❯</span>
+  </div>
+
+  <footer>
+  © 2025 Vedran Jagodnik — SIDEMIX
+  <div id="themeToggle" class="toggle-footer">○</div>
+</footer>
+
+
+<script>
+/* ---------- DARK MODE ---------- */
+const root = document.documentElement;
+const toggle = document.getElementById("themeToggle");
+let theme = localStorage.getItem("theme") || "light";
+document.body.setAttribute("data-theme", theme);
+toggle.textContent = theme === "light" ? "○" : "●";
+
+toggle.onclick = () => {
+  theme = (theme === "light" ? "dark" : "light");
+  document.body.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  toggle.textContent = theme === "light" ? "○" : "●";
+};
+
+/* ---------- IMAGE GALLERIES: MODIFY AS NEEDED ---------- */
+const galleries = {
+  "post1": [
+    "assets/news/post1/kickoff.png",
+    //"assets/news/post1/2.jpg"
+  ]
+  // Add more posts:
+  // "post2": ["assets/news/post2/1.jpg", "assets/news/post2/2.jpg"],
+};
+
+let currentGallery = [];
+let currentIndex = 0;
+
+function openGallery(post, index){
+  currentGallery = galleries[post];
+  currentIndex = index;
+  document.getElementById("modalImg").src = currentGallery[currentIndex];
+  document.getElementById("modal").style.display = "flex";
+}
+function closeGallery(){ document.getElementById("modal").style.display = "none"; }
+function nextImg(){ currentIndex = (currentIndex+1)%currentGallery.length; document.getElementById("modalImg").src = currentGallery[currentIndex]; }
+function prevImg(){ currentIndex = (currentIndex-1+currentGallery.length)%currentGallery.length; document.getElementById("modalImg").src = currentGallery[currentIndex]; }
+
+</script>
+
+</body>
+</html>
+
