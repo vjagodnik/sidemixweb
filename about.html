@@ -62,6 +62,43 @@
   justify-content:space-between;
   align-items:center;
 }
+
+/* Research Team + Image two-column layout */
+.team-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.team-grid {
+  flex: 3; /* 60% width */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.team-image {
+  flex: 2; /* 40% width */
+  display: flex;
+  align-items: center;
+}
+
+.team-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Mobile: stack grid above image */
+@media (max-width: 750px) {
+  .team-wrapper {
+    flex-direction: column;
+  }
+  .team-image {
+    margin-top: 1rem;
+  }
+}
+
 </style>
 
 </head>
@@ -87,6 +124,53 @@
     <p>The project combines <strong>experimental</strong> methods—such as triaxial tests, torsional shear, and SEM analysis—with <strong>numerical simulations</strong> based on the Discrete Element Method (DEM) to study micromechanical soil behavior.</p>
 
     <p>Expected outcomes include improved models for predicting soil response under dynamic loads and the development of more reliable tools for geotechnical design.</p>
+
+
+<p style="margin-bottom:1.5cm;"></p>
+
+
+<h2>Research Team</h2>
+
+<div class="team-wrapper">
+
+  <div class="team-grid">
+
+    <div class="team-member">
+      <h3>Vedran Jagodnik</h3>
+      <p>Project Lead</p>
+    </div>
+
+    <div class="team-member">
+      <h3>Kamil Bekir Açacan</h3>
+      <p>Collaborator</p>
+    </div>
+
+    <div class="team-member">
+      <h3>James Leak</h3>
+      <p>Collaborator</p>
+    </div>
+
+    <div class="team-member">
+      <h3>Petra Jagodnik</h3>
+      <p>Collaborator</p>
+    </div>
+
+    <div class="team-member">
+      <h3>Davor Marušić</h3>
+      <p>PhD student</p>
+    </div>
+
+  </div>
+
+  <div class="team-image">
+    <img src="assets/images/research_team.png" alt="Research Team Illustration">
+  </div>
+
+</div>
+
+
+
+
   </main>
 
   <footer>
